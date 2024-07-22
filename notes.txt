@@ -1,0 +1,16 @@
+Создание нового проекта Django - 
+
+python manage.py startproject <name>
+
+!примечание!
+Для запуска файла manage.py нужно находиться в одной папке с этим файлом
+Для перехода во вложенную папку <name> используется команда cd <name>
+
+
+Запуск сервера - 
+
+python manage.py runserver
+
+Создание нового веб-сервиса - 
+
+python manage.py startapp <name2>

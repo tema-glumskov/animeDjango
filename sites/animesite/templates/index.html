@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+<!-- Параметры страницы -->
+<head>
+    <meta charset="UTF-8">
+    <title>Моя первая страница</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<!-- Контент веб-страницы -->
+<body>
+    <!-- header - это шапка сайта        -->
+    <header>
+        <img class="logo" src="../static/logo.png" alt="" width="196px" height="209px">
+        <h2 class="site-name">Сайт про аниме и мангу</h2>
+        <nav style="text-align: center;">
+            <a class="nav-link" href="#">Главная</a>
+            <a class="nav-link" href="anime">Аниме</a>
+            <a class="nav-link" href="#">Манга</a>
+        </nav>
+    </header>
+    <h1>Добро пожаловать, {{ name }}</h1>
+    <main>
+        <!-- href - hyper reference - атрибут адреса ссылки -->
+        <a href="https://youtube.com" target="_blank">Ютубчик</a>
+        <img src="../static/kotik.jpg" alt="Картинка не загрузилась :(" width="500px">    
+        <iframe width="500" height="300" src="https://www.youtube.com/embed/aD5Mst0OoSs?si=6FxvQi_hrvBG1r5N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display: block; text-align: center; margin: 0 auto;"></iframe>    
+    </main>
+</body>
+</html>
