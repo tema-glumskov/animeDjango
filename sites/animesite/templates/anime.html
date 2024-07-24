@@ -28,6 +28,17 @@
             </div>
 		    <a class="anime-link" href="https://animego.org/anime/krov-triedinstva-1917" target="_blank"><img src="../static/krov.jpg" width="500px"></a>
 	    </section>
+
+        {% for anime_title in anime_titles %}
+        <section class="anime-card">
+            <div class="left">
+                <h2 class="anime-name" style="font-size: 1.5em;">{{anime_title.title}}</h2>
+                <p class="anime-description">{{anime_title.description}}</p>
+            </div>
+		    <a class="anime-link" href={{anime_title.link}} target="_blank"><img src={{anime_title.image_link}} width="500px"></a>
+	    </section>
+        {% endfor %}
+
     </main> 
 </body>
 </html>

@@ -20,10 +20,16 @@
     </header>
     <h1>Добро пожаловать, {{ name }}</h1>
     <main>
-        <!-- href - hyper reference - атрибут адреса ссылки -->
-        <a href="https://youtube.com" target="_blank">Ютубчик</a>
-        <img src="../static/kotik.jpg" alt="Картинка не загрузилась :(" width="500px">    
-        <iframe width="500" height="300" src="https://www.youtube.com/embed/aD5Mst0OoSs?si=6FxvQi_hrvBG1r5N" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display: block; text-align: center; margin: 0 auto;"></iframe>    
+        <form class="login-form" action="" method="POST">
+            <h1 class="login-form-heading">Вход</h1>
+            <input type="text" name="username" placeholder="Логин" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="submit" value="Войти">
+        </form>
+        <a href="register">Регистрация</a>
+
+        
     </main>
+    <!-- <script type="module" src="mainpage.js"></script> -->
 </body>
 </html>

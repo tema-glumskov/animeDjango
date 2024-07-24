@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from animesite.views import index, anime
+from animesite.views import index, anime, manga, register
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,8 @@ urlpatterns = [
     path('', index, name='index'),
     # обслуживание страницы аниме
     path('anime/', anime, name='anime'),
+    # обслуживание страницы манги
+    path('manga/', manga, name='manga'),
+    # обслуживание страницы регистрации
+    path('register/', register, name='register'),  # заменить на реальную регистрацию страницу
 ]
