@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+    
     <header>
         <img class="logo" src="../static/logo.png" alt="" width="196px" height="209px">
         <h2 class="site-name">Сайт про аниме и мангу</h2>
         <nav style="text-align: center;">
-            <a class="nav-link" href="/">Главная</a>
+            <a class="nav-link" href="/ ">Главная</a>
             <a class="nav-link" href="anime">Аниме</a>
             <a class="nav-link" href="#">Манга</a>
         </nav>
     </header>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     <form class="register-form" action="" method="POST">
         <h1 class="register-form-heading">Регистрация</h1>
         <input type="text" name="username" placeholder="Логин" required>

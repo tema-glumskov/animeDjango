@@ -36,6 +36,11 @@
                 <p class="anime-description">{{anime_title.description}}</p>
             </div>
 		    <a class="anime-link" href={{anime_title.link}} target="_blank"><img src={{anime_title.image_link}} width="500px"></a>
+            <!-- форма для добавления аниме в избранные аниме -->
+            <form class="add-form" action="" method="post" name="addToFavourites">
+                <input type="hidden" name="title" value="{{anime_title.title}}">
+                <input class="add-btn" type="submit" value="Добавить в избранное">
+            </form>
 	    </section>
         {% endfor %}
 
