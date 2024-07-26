@@ -27,11 +27,12 @@ def anime(request):
     context = {'anime_titles': AnimeTitle.objects.all()}
     if request.method == 'POST':
         title = request.POST.get('title')
-        user = AnimeUser.objects.filter(login=login).first()
-        user.favourite_anime.append(title)
-        user.save()
-        print(user.favourite_anime)
-        print('Угабуга!')
+        user = AnimeUser.objects.get(login=login)
+        if title not in user.favourite_anime.split('\n'):
+            user.favourite_anime += f'{title}\n'
+            user.save()
+        else:
+            print('Такое аниме уже добавлено в избранное!')
     if locked:
         return redirect('https://youtu.be/dQw4w9WgXcQ?si=N5_ZSmfxseh59c3k')
     return render(request, 'anime.html', context=context)
@@ -49,3 +50,28 @@ def register(request):
         else:
             messages.success(request, 'Такой пользователь уже существует!')
     return render(request, 'register.html')
+
+
+def account(request):
+    global locked
+    global login
+    if locked:
+        return redirect('https://youtu.be/dQw4w9WgXcQ?si=N5_ZSmfxseh59c3k')
+    user = AnimeUser.objects.get(login=login)
+    context = {
+        'username': user.login, 
+        'favourite_anime': '\n'.join(set(user.favourite_anime.split('\n')))
+        }
+    if request.method == 'POST':
+        if 'logout' in request.POST:
+            print('Вы вышлИ!')
+            locked = True
+            return redirect('index')
+        elif 'delete' in request.POST:
+            anime_list = user.favourite_anime.split('\n')
+            anime_list.remove(request.POST.get('title'))
+            user.favourite_anime = '\n'.join(anime_list)
+            user.save()
+            return redirect('account')
+
+    return render(request, 'account.html', context=context)

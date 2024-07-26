@@ -11,4 +11,4 @@ class AnimeTitle(models.Model):
 class AnimeUser(models.Model):
     login = models.CharField(max_length=50)
     password = models.CharField(max_length=12)
-    favourite_anime = list()
+    favourite_anime = models.TextField(default='')

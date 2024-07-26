@@ -26,6 +26,12 @@ li {
     color: red;
 }
 
+blockquote {
+    width: 200px;
+    height: 200px;
+    word-wrap: normal;
+}
+
 /* селектор по классу */
 .site-name {
     margin-left: 42px;
